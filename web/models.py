@@ -1,7 +1,7 @@
 from django.db import models
 
 
-#Модель группы
+#РњРѕРґРµР»СЊ РіСЂСѓРїРїР°
 class Group(models.Model):
     faculty = models.CharField(max_length=50)
     specialization = models.CharField(max_length=50)
@@ -9,32 +9,32 @@ class Group(models.Model):
     number = models.CharField(max_length=50)
 
 
-#Модель преподаватели
+#РњРѕРґРµР»СЊ РїСЂРµРїРѕРґР°РІР°С‚РµР»СЊ
 class Teacher(models.Model):
     surname = models.CharField(max_length=50)
     name = models.CharField(max_length=50)
     patronymic = models.CharField(max_length=50)
 
 
-#Модель предметы
+#РњРѕРґРµР»СЊ РїСЂРµРґРјРµС‚
 class Subject(models.Model):
     title_subject = models.CharField(max_length=50)
 
 
-#Модель номер пары
+#РњРѕРґРµР»СЊ РЅРѕРјРµСЂ РїР°СЂС‹
 class Pair_Number(models.Model):
     start_pair = models.TimeField()
     end_pair = models.TimeField()
 
 
-#Модель аудитории
+#РњРѕРґРµР»СЊ Р°СѓРґРёС‚РѕСЂРёСЏ
 class Auditorium(models.Model):
     building = models.IntegerField()
     floor = models.IntegerField()
     number_auditorium = models.IntegerField()
 
 
-#Модель расписание
+#РњРѕРґРµР»СЊ СЂР°СЃРїРёСЃР°РЅРёРµ
 class Schedule(models.Model):
     date = models.DateField()
     number_pair = models.ForeignKey(Pair_Number, on_delete=models.CASCADE)
